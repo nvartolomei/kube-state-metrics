@@ -50,6 +50,7 @@ var (
 		"limitrange":		  struct{}{},
 		"replicasets":            struct{}{},
 		"replicationcontrollers": struct{}{},
+		"statefulsets":           struct{}{},
 	}
 	availableCollectors = map[string]func(registry prometheus.Registerer, kubeClient clientset.Interface){
 		"daemonsets":             RegisterDaemonSetCollector,
@@ -60,6 +61,7 @@ var (
 		"limitrange":		  RegisterLimitRangeCollector,
 		"replicasets":            RegisterReplicaSetCollector,
 		"replicationcontrollers": RegisterReplicationControllerCollector,
+		"statefulsets":           RegisterStatefulSetCollector,
 	}
 )
 
